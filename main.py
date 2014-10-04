@@ -4,10 +4,10 @@ def generateRounds(numDebaters, numRounds):
     generateRounds implements the a simple lazy algorithm, guaranteeing that for
     any tournament where numRooms > 2*numRounds, every debateer will switch
     positions every round, and no debater will see another debater twice before
-    outrounds. An optimal algorithm would only require numDebaters > 3*numRounds
+    outrounds. This is a sub-optimal, but provably correct algorithm.
     
     The output will be a tuple of two lists of tuples, which contain two lists,
-    resulting in following structure:
+    resulting in the following structure:
     (
       [
         ([Half prop debaters in round 0], [Half prop debaters in round 0]),
