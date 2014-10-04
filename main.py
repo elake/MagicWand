@@ -53,7 +53,7 @@ def generateRounds(numDebaters, numRounds):
     # The 0th round will simply be whatever order they happened to be on input
     prop, opp = [(h1.copy(), h2.copy())], [(h3.copy(), h4.copy())]
     
-    # For each further round, have h2-h4 cycle asyncronously.
+    # For each further round, have h2-h4 cycle asynchronously.
     for i in range(numRounds-1):
         # h1 remains in the same
         # h2 cycles up 1
