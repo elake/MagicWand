@@ -1,0 +1,41 @@
+
+def generateRounds(numTeams, numRounds):
+    """
+    Takes an even number of teams and a number of rounds greater than 2, and
+    returns a tuple with two lists of lists, in the following form:
+    (
+      [ 
+        [List of prop teams in round 0],
+        ...
+        [List of prop teams in round n]
+      ],
+      [
+        [List of opp  teams in round 0],
+        ...
+        [List of opp  teams in round n]
+      ]
+    )
+    Such that the indices of [List of prop teams in round k] align with the
+    matching opponents for [List of opp  teams in round k].
+    """
+    
+    if (numTeams % 2):
+        print("Error! Please provide even number of teams.")
+        exit()
+    if (numRounds < 2):
+        println("Don't use this tool for doing less than two rounds of debate. That's stupid.")
+        exit()
+
+    teams = [i for i in range(numTeams)]
+    h1, h2 = teams[:numTeams/2], teams[numTeams/2:]
+    prop, opp = [h1.copy()], [h2.copy()]
+    
+    for i in range(numRounds-1):
+        # Cycle order of h1 by one team
+        h1 = h1.insert(0, a.pop())
+        if (i % 2):
+            prop.append(h1.copy())
+            opp.append(h2.copy())
+        else:
+            prop.append(h2.copy())
+            opp.append(h1.copy())
