@@ -25,11 +25,11 @@ def generateRounds(numDebaters, numRounds):
     their room each round, and their partner will be the person with the
     matching index.
 
-    A simple inductive proof of the correctness of this algorithm can be seen by
-    the fact that each ith quadrant outpaces the i-1th quadrant, and
-    > 3*numRounds is enough that the fastest cycle will never overlap. So for
-    every cycle you will never align with any other debater from any quadrant
-    you have previously aligned with.
+    A simple inductive proof of the correctness for this algorithm can be seen
+    by the fact that each ith quadrant outpaces the i-1th quadrant, and
+    2*numRounds + 1 is enough that the fastest cycle will never overlap. So for
+    every round you can be assured that no cycle will ever catch up to one that
+    it has already seen, or ever be caught up to by one it has already seen.
     """
     
     if (numDebaters % 4):
